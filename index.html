@@ -17,15 +17,40 @@
         <h1>devfinder</h1>
         <span>Dark <img src="./assets/icons/icon-moon.svg" alt="" /></span>
       </header>
+
       <form>
         <img src="./assets/icons/icon-search.svg" alt="" />
         <input id="user-search" type="text" />
         <button type="submit">Search</button>
       </form>
-      <div>
-        <h2>GitHub username</h2>
-        <span>Joined</span>
-        <div>Repos Followers Following</div>
+
+      <div id="user-card">
+        <div id="user-stats">
+          <div>
+            <h4 id="repos">Repos</h4>
+          </div>
+          <div>
+            <h4 id="followers">Followers</h4>
+          </div>
+          <div>
+            <h4 id="following">Following</h4>
+          </div>
+        </div>
+
+        <div class="user-location">
+          <div id="location">
+            <img src="./assets/icons/icon-location.svg" alt="" />
+          </div>
+          <div id="twitter">
+            <img src="./assets/icons/icon-twitter.svg" alt="" />
+          </div>
+          <div id="link">
+            <img src="./assets/icons/icon-website.svg" alt="" />
+          </div>
+          <div id="company">
+            <img src="./assets/icons/icon-company.svg" alt="" />
+          </div>
+        </div>
       </div>
     </main>
     <script src="./assets/js/main.js"></script>
