@@ -30,15 +30,18 @@
       </header>
 
       <form
-        class="bg-romance dark:bg-blue-zodiac flex flex-row justify-evenly items-center rounded-2xl shadow-3xl">
-        <img src="./assets/icons/icon-search.svg" alt="" />
+        class="bg-romance dark:bg-blue-zodiac flex flex-row items-center rounded-2xl shadow-3xl">
+        <img class="mx-2 w-5 h-5" src="./assets/icons/icon-search.svg" alt="" />
         <input
-          class="form-input focus:outline-none border-none text-blue-zodiac dark:text-white"
+          class="form-input focus:outline-none border-none text-blue-zodiac dark:text-white text-xs flex-initial w-4/5"
           id="user-search"
           type="text"
           placeholder="Search GitHub username..." />
+        <span id="error" class="text-red-600 text-xs flex-none hidden">
+          No results
+        </span>
         <button
-          class="bg-azure text-white py-3 px-4 rounded-xl m-1"
+          class="bg-azure text-white py-2 px-3 rounded-xl m-1"
           type="submit">
           Search
         </button>
@@ -47,14 +50,15 @@
       <div id="user-card">
         <div class="flex flex-row">
           <img
-            src="https://avatars.githubusercontent.com/u/37314020?v=4"
+            id="avatar"
+            src="https://avatars.githubusercontent.com/u/583231?v=4"
             class="rounded-full w-18 h-18 lg:w-28 lg:h-28" />
           <div>
-            <h1 id="name">Brooke Paglia</h1>
-            <h3 id="username">BrookesCodeStuff</h3>
-            <p>
-              Developer with 10+ years in the tech industry, looking to make the
-              leap into web dev!
+            <h1 id="name">The Octocat</h1>
+            <h3 id="username">@octocat</h3>
+            <p id="bio">
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
+              odio. Quisque volutpat mattis eros.
             </p>
           </div>
         </div>

@@ -1,83 +1,66 @@
 const form = document.querySelector("form");
 const srchUser = document.querySelector("#user-search");
+const err = document.querySelector("#error");
 
 function handleSubmit(event) {
   event.preventDefault();
   const user = srchUser.value;
 
+  if (!err.classList.contains("hidden")) {
+    err.classList.add("hidden");
+  }
+
   fetch(`https://api.github.com/users/${user}`)
     .then((response) => {
-      if (!response.ok) {
-        const errSpan = document.createElement("span");
-        errSpan.classList.add("text-red-600");
-        errSpan.textContent = "No results";
-        srchUser.insertAdjacentElement("afterend", errSpan);
+      if (response.ok) {
+        return response.json();
       }
-      return response.json();
+      throw new Error("No results");
     })
     .then((data) => {
       createUserCard(data);
-    });
+    })
+    .catch((error) => err.classList.remove("hidden"));
 }
 
 function createUserCard(data) {
-  // Grab all existing card elements
-  const userCard = document.querySelector("#user-card");
-  const repos = document.querySelector("#repos");
-  const followers = document.querySelector("#followers");
-  const following = document.querySelector("#following");
-  const location = document.querySelector("#location");
-  const twitter = document.querySelector("#twitter");
-  const link = document.querySelector("#link");
-  const company = document.querySelector("#company");
-
-  const avatar = document.createElement("img");
+  // Grab all card elements and update
+  const avatar = document.querySelector("#avatar");
   avatar.src = data.avatar_url;
 
-  const name = document.createElement("div");
+  const name = document.querySelector("#name");
   name.textContent = data.name;
 
-  const username = document.createElement("div");
-  username.textContent = data.login;
+  const username = document.querySelector("#username");
+  username.textContent = `@${data.login}`;
 
-  const bio = document.createElement("p");
-  bio.textContent = data.bio;
+  const bio = document.querySelector("#bio");
+  bio.textContent = data.bio ? data.bio : "Not available";
 
-  // Add all new elements to user card container
-  userCard.prepend(avatar, name, username, bio);
+  const repos = document.querySelector("#repos");
+  repos.textContent = data.public_repos;
 
-  // Fill in the rest of the card info
-  const repoCount = document.createElement("div");
-  repoCount.textContent = data.public_repos;
-  repos.appendChild(repoCount);
+  const followers = document.querySelector("#followers");
+  followers.textContent = data.followers;
 
-  const followerCount = document.createElement("div");
-  followerCount.textContent = data.followers;
-  followers.appendChild(followerCount);
+  const following = document.querySelector("#following");
+  following.textContent = data.following;
 
-  const followingCount = document.createElement("div");
-  followingCount.textContent = data.following;
-  following.appendChild(followingCount);
+  const location = document.querySelector("#location");
+  location.textContent = data.location ? data.location : "Not available";
 
-  const locInfo = document.createElement("span");
-  locInfo.textContent = data.location ? data.location : "Not available";
-  location.appendChild(locInfo);
-
-  const twitterUrl = document.createElement("span");
+  const twitter = document.querySelector("#twitter");
   data.twitter_username
-    ? (twitterUrl.innerHTML = `<a href=https://twitter.com/${data.twitter_username}>${data.twitter_username}</a>`)
-    : (twitterUrl.textContent = "Not available");
-  twitter.appendChild(twitterUrl);
+    ? (twitter.innerHTML = `<a href=https://twitter.com/${data.twitter_username}>${data.twitter_username}</a>`)
+    : (twitter.textContent = "Not available");
 
-  const linkUrl = document.createElement("span");
+  const link = document.querySelector("#link");
   data.blog
-    ? (linkUrl.innerHTML = `<a href=${data.blog}>${data.blog}</a>`)
-    : (linkUrl.textContent = "Not available");
-  link.appendChild(linkUrl);
+    ? (link.innerHTML = `<a href=${data.blog}>${data.blog}</a>`)
+    : (link.textContent = "Not available");
 
-  const companyInfo = document.createElement("span");
-  companyInfo.textContent = data.company ? data.company : "Not Available";
-  company.appendChild(companyInfo);
+  const company = document.querySelector("#company");
+  company.textContent = data.company ? data.company : "Not Available";
 }
 
 form.addEventListener("submit", handleSubmit);
