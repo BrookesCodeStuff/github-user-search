@@ -1,3 +1,4 @@
+import { formatDate } from "./helpers.js";
 const form = document.querySelector("form");
 const srchUser = document.querySelector("#user-search");
 const err = document.querySelector("#error");
@@ -33,6 +34,9 @@ function createUserCard(data) {
 
   const username = document.querySelector("#username");
   username.textContent = `@${data.login}`;
+
+  const joined = document.querySelector("#joined");
+  joined.textContent = `Joined ${formatDate(data.created_at)}`;
 
   const bio = document.querySelector("#bio");
   bio.textContent = data.bio ? data.bio : "Not available";

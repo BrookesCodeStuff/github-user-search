@@ -47,60 +47,67 @@
         </button>
       </form>
 
-      <div id="user-card">
-        <div class="flex flex-row">
+      <div
+        id="user-card"
+        class="my-4 px-6 py-8 bg-romance dark:bg-blue-zodiac rounded-2xl shadow-3xl">
+        <div class="">
           <img
             id="avatar"
             src="https://avatars.githubusercontent.com/u/583231?v=4"
-            class="rounded-full w-18 h-18 lg:w-28 lg:h-28" />
-          <div>
-            <h1 id="name">The Octocat</h1>
-            <h3 id="username">@octocat</h3>
-            <p id="bio">
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-              odio. Quisque volutpat mattis eros.
-            </p>
+            class="rounded-full w-18 h-18 lg:w-28 lg:h-28 mr-5 float-left" />
+          <div class="">
+            <h1 id="name" class="leading-6 text-base font-bold text-ebony-clay">
+              The Octocat
+            </h1>
+            <h3 id="username" class="text-azure leading-5 text-xs">@octocat</h3>
           </div>
+          <h3
+            id="joined"
+            class="leading-5 text-xs text-slate-grey box col-start-2 col-span-2">
+            Joined 25 Jan 2011
+          </h3>
+          <p id="bio" class="leading-6 text-xs text-kashmir-blue mt-8 mb-6">
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
+            odio. Quisque volutpat mattis eros.
+          </p>
         </div>
-        <div id="user-stats">
+
+        <div id="user-stats" class="bg-ghost-white">
           <div>
             <h4>
               Repos
-              <h2 id="repos">55</h2>
+              <h2 id="repos">8</h2>
             </h4>
           </div>
           <div>
             <h4>
               Followers
-              <h2 id="followers">18</h2>
+              <h2 id="followers">3938</h2>
             </h4>
           </div>
           <div>
             <h4>
               Following
-              <h2 id="following">20</h2>
+              <h2 id="following">9</h2>
             </h4>
           </div>
         </div>
 
         <div class="user-location">
           <div>
-            <img src="./assets/icons/icon-location.svg" alt="" />
-            <span id="location">Orlando, FL / Remote</span>
+            <img src="./assets/icons/icon-location.svg" alt="" class="inline" />
+            <span id="location">San Francisco</span>
+          </div>
+          <div>
+            <img src="./assets/icons/icon-website.svg" alt="" />
+            <span id="link">
+              <a href="https://github.blog"> https://github.blog </a>
+            </span>
           </div>
           <div>
             <img src="./assets/icons/icon-twitter.svg" alt="" />
             <span id="twitter">
               <a href="https://twitter.com/brookelikesowls">brookelikesowls</a>
-            </span>
-          </div>
-          <div>
-            <img src="./assets/icons/icon-website.svg" alt="" />
-            <span id="link">
-              <a
-                href="https://brookescodestuff.github.io/react-personal-portfolio/">
-                https://brookescodestuff.github.io/react-personal-portfolio/
-              </a>
             </span>
           </div>
           <div>
@@ -110,6 +117,6 @@
         </div>
       </div>
     </main>
-    <script src="./assets/js/main.js"></script>
+    <script type="module" src="./assets/js/main.js"></script>
   </body>
 </html>

@@ -3,6 +3,9 @@ module.exports = {
   content: ["index.html", "./assets/js/*.js"],
   darkMode: "class",
   theme: {
+    fontFamily: {
+      serif: ["Space Mono", "monospace"],
+    },
     extend: {
       spacing: {
         18: "4.375rem",
@@ -15,7 +18,7 @@ module.exports = {
         romance: "#fefefe",
         "ghost-white": "#f8f8ff",
         azure: "#0079ff",
-        "slate-grey": "#6697c9a",
+        "slate-grey": "#697c9a",
         "kashmir-blue": "#4b6a9b",
         "ebony-clay": "#2b3442",
         "big-stone": "#141d2f",
@@ -23,10 +26,6 @@ module.exports = {
         mist: "#979797",
         iris: "#4660BB",
       },
-    },
-
-    fontFamily: {
-      serif: ["Space Mono", "monospace"],
     },
   },
   plugins: [],
