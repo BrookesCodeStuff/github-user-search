@@ -24,8 +24,11 @@
       <header class="flex flex-row justify-between mb-9">
         <h1 class="font-bold text-xl">devfinder</h1>
         <div class="flex flex-row justify-evenly items-center">
-          <span class="pr-4">Dark</span>
-          <img class="w-5 h-5" src="./assets/icons/icon-moon.svg" alt="" />
+          <span class="pr-4 text-kashmir-blue">Dark</span>
+          <img
+            class="w-5 h-5 filter-light dark:filter-dark"
+            src="./assets/icons/icon-moon.svg"
+            alt="" />
         </div>
       </header>
 
@@ -55,64 +58,86 @@
             id="avatar"
             src="https://avatars.githubusercontent.com/u/583231?v=4"
             class="rounded-full w-18 h-18 lg:w-28 lg:h-28 mr-5 float-left" />
-          <div class="">
-            <h1 id="name" class="leading-6 text-base font-bold text-ebony-clay">
-              The Octocat
-            </h1>
-            <h3 id="username" class="text-azure leading-5 text-xs">@octocat</h3>
+          <div>
+            <div>
+              <h1
+                id="name"
+                class="leading-6 text-base font-bold text-ebony-clay">
+                The Octocat
+              </h1>
+              <h3 id="username" class="text-azure leading-5 text-xs">
+                @octocat
+              </h3>
+            </div>
+            <h3
+              id="joined"
+              class="leading-5 text-xs text-slate-grey box col-start-2 col-span-2">
+              Joined 25 Jan 2011
+            </h3>
           </div>
-          <h3
-            id="joined"
-            class="leading-5 text-xs text-slate-grey box col-start-2 col-span-2">
-            Joined 25 Jan 2011
-          </h3>
           <p id="bio" class="leading-6 text-xs text-kashmir-blue mt-8 mb-6">
             Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
             odio. Quisque volutpat mattis eros.
           </p>
         </div>
 
-        <div id="user-stats" class="bg-ghost-white">
-          <div>
-            <h4>
+        <div
+          id="user-stats"
+          class="bg-ghost-white flex justify-evenly rounded-xl py-5 mb-6">
+          <div class="text-center">
+            <h4 class="text-xs text-kashmir-blue mb-2">
               Repos
-              <h2 id="repos">8</h2>
+              <h2 id="repos" class="font-bold text-ebony-clay">8</h2>
             </h4>
           </div>
-          <div>
-            <h4>
+          <div class="text-center">
+            <h4 class="text-xs text-kashmir-blue mb-2">
               Followers
-              <h2 id="followers">3938</h2>
+              <h2 id="followers" class="font-bold text-ebony-clay">3938</h2>
             </h4>
           </div>
-          <div>
-            <h4>
+          <div class="text-center">
+            <h4 class="text-xs text-kashmir-blue mb-2">
               Following
-              <h2 id="following">9</h2>
+              <h2 id="following" class="font-bold text-ebony-clay">9</h2>
             </h4>
           </div>
         </div>
 
         <div class="user-location">
-          <div>
-            <img src="./assets/icons/icon-location.svg" alt="" class="inline" />
-            <span id="location">San Francisco</span>
+          <div class="mb-4">
+            <img
+              src="./assets/icons/icon-location.svg"
+              alt=""
+              class="inline w-5 filter-light dark:filter-dark" />
+            <span id="location" class="text-kashmir-blue pl-3"
+              >San Francisco</span
+            >
           </div>
-          <div>
-            <img src="./assets/icons/icon-website.svg" alt="" />
-            <span id="link">
-              <a href="https://github.blog"> https://github.blog </a>
+          <div class="mb-4">
+            <img
+              src="./assets/icons/icon-website.svg"
+              alt=""
+              class="inline w-5 filter-light dark:filter-dark" />
+            <span id="link" class="text-kashmir-blue pl-3">
+              <a href="https://github.blog">https://github.blog </a>
             </span>
           </div>
-          <div>
-            <img src="./assets/icons/icon-twitter.svg" alt="" />
-            <span id="twitter">
-              <a href="https://twitter.com/brookelikesowls">brookelikesowls</a>
+          <div class="mb-4">
+            <img
+              src="./assets/icons/icon-twitter.svg"
+              alt=""
+              class="inline w-5 filter-light dark:filter-dark opacity-50" />
+            <span id="twitter" class="text-kashmir-blue pl-3 opacity-50">
+              <a href="https://twitter.com/brookelikesowls">Not Available</a>
             </span>
           </div>
-          <div>
-            <img src="./assets/icons/icon-company.svg" alt="" />
-            <span id="company">Not Available</span>
+          <div class="mb-4">
+            <img
+              src="./assets/icons/icon-company.svg"
+              alt=""
+              class="inline w-5 filter-light dark:filter-dark" />
+            <span id="company" class="text-kashmir-blue pl-3">@github</span>
           </div>
         </div>
       </div>

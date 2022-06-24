@@ -24,6 +24,17 @@ function handleSubmit(event) {
     .catch((error) => err.classList.remove("hidden"));
 }
 
+function isAvail(el) {
+  el.classList.remove("opacity-50");
+  el.previousElementSibling.classList.remove("opacity-50");
+}
+
+function notAvail(el) {
+  el.textContent = "Not available";
+  el.classList.add("opacity-50");
+  el.previousElementSibling.classList.add("opacity-50");
+}
+
 function createUserCard(data) {
   // Grab all card elements and update
   const avatar = document.querySelector("#avatar");
@@ -39,7 +50,9 @@ function createUserCard(data) {
   joined.textContent = `Joined ${formatDate(data.created_at)}`;
 
   const bio = document.querySelector("#bio");
-  bio.textContent = data.bio ? data.bio : "Not available";
+  data.bio
+    ? ((bio.textContent = data.bio), bio.classList.remove("opacity-50"))
+    : ((bio.textContent = "Not available"), bio.classList.add("opacity-50"));
 
   const repos = document.querySelector("#repos");
   repos.textContent = data.public_repos;
@@ -51,20 +64,26 @@ function createUserCard(data) {
   following.textContent = data.following;
 
   const location = document.querySelector("#location");
-  location.textContent = data.location ? data.location : "Not available";
+  data.location
+    ? (isAvail(location), (location.textContent = data.location))
+    : notAvail(location);
 
   const twitter = document.querySelector("#twitter");
   data.twitter_username
-    ? (twitter.innerHTML = `<a href=https://twitter.com/${data.twitter_username}>${data.twitter_username}</a>`)
-    : (twitter.textContent = "Not available");
+    ? ((twitter.innerHTML = `<a href=https://twitter.com/${data.twitter_username}>${data.twitter_username}</a>`),
+      isAvail(twitter))
+    : notAvail(twitter);
 
   const link = document.querySelector("#link");
   data.blog
-    ? (link.innerHTML = `<a href=${data.blog}>${data.blog}</a>`)
-    : (link.textContent = "Not available");
+    ? ((link.innerHTML = `<a href=${data.blog}>${data.blog}</a>`),
+      isAvail(link))
+    : notAvail(link);
 
   const company = document.querySelector("#company");
-  company.textContent = data.company ? data.company : "Not Available";
+  data.company
+    ? ((company.textContent = data.company), isAvail(company))
+    : notAvail(company);
 }
 
 form.addEventListener("submit", handleSubmit);
