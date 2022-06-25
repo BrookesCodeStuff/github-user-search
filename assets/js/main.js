@@ -2,6 +2,33 @@ import { formatDate } from "./helpers.js";
 const form = document.querySelector("form");
 const srchUser = document.querySelector("#user-search");
 const err = document.querySelector("#error");
+const modeToggle = document.querySelector("#mode-toggle");
+
+function toggleMode() {
+  if (localStorage.theme === "light") {
+    document.documentElement.classList.add("dark");
+    localStorage.theme = "dark";
+    labelModeButton();
+  } else {
+    document.documentElement.classList.remove("dark");
+    localStorage.theme = "light";
+    labelModeButton();
+  }
+}
+
+function labelModeButton() {
+  if (
+    localStorage.theme === "dark" ||
+    (!("theme" in localStorage) &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches)
+  ) {
+    modeToggle.children[0].textContent = "Light";
+    modeToggle.children[1].src = "./assets/icons/icon-sun.svg";
+  } else if (localStorage.theme === "light") {
+    modeToggle.children[0].textContent = "Dark";
+    modeToggle.children[1].src = "./assets/icons/icon-moon.svg";
+  }
+}
 
 function handleSubmit(event) {
   event.preventDefault();
@@ -87,3 +114,6 @@ function createUserCard(data) {
 }
 
 form.addEventListener("submit", handleSubmit);
+modeToggle.addEventListener("click", toggleMode);
+
+labelModeButton();

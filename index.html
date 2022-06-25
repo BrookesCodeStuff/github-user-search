@@ -18,25 +18,42 @@
 
     <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Frontend Mentor | GitHub user search app</title>
+
+    <!-- Add dark/light mode setting inline to avoid FOUC -->
+    <script>
+      if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
   </head>
-  <body class="bg-ghost-white dark:bg-dark-gunmetal font-serif">
+  <body class="bg-ghost-white dark:bg-big-stone font-serif transition-colors">
     <main class="container mx-auto w-11/12 mt-8">
       <header class="flex flex-row justify-between mb-9">
-        <h1 class="font-bold text-xl">devfinder</h1>
-        <div class="flex flex-row justify-evenly items-center">
-          <span class="pr-4 text-kashmir-blue">Dark</span>
+        <h1 class="font-bold text-xl text-ebony-clay dark:text-white">
+          devfinder
+        </h1>
+        <button
+          id="mode-toggle"
+          class="flex flex-row justify-evenly items-center">
+          <span class="pr-4 text-kashmir-blue dark:text-white">Dark</span>
           <img
             class="w-5 h-5 filter-light dark:filter-dark"
             src="./assets/icons/icon-moon.svg"
             alt="" />
-        </div>
+        </button>
       </header>
 
       <form
-        class="bg-romance dark:bg-blue-zodiac flex flex-row items-center rounded-2xl shadow-3xl">
+        class="bg-romance dark:bg-blue-zodiac flex flex-row items-center rounded-2xl shadow-3xl dark:shadow-none">
         <img class="mx-2 w-5 h-5" src="./assets/icons/icon-search.svg" alt="" />
         <input
-          class="form-input focus:outline-none border-none text-blue-zodiac dark:text-white text-xs flex-initial w-4/5"
+          class="form-input focus:outline-none border-none text-blue-zodiac dark:text-white dark:bg-blue-zodiac text-xs flex-initial w-4/5"
           id="user-search"
           type="text"
           placeholder="Search GitHub username..." />
@@ -44,7 +61,7 @@
           No results
         </span>
         <button
-          class="bg-azure text-white py-2 px-3 rounded-xl m-1"
+          class="bg-azure text-white text-sm font-bold py-3 px-4 rounded-xl m-1.5"
           type="submit">
           Search
         </button>
@@ -52,7 +69,7 @@
 
       <div
         id="user-card"
-        class="my-4 px-6 py-8 bg-romance dark:bg-blue-zodiac rounded-2xl shadow-3xl">
+        class="my-4 px-6 py-8 bg-romance dark:bg-blue-zodiac rounded-2xl shadow-3xl dark:shadow-none">
         <div class="">
           <img
             id="avatar"
@@ -62,7 +79,7 @@
             <div>
               <h1
                 id="name"
-                class="leading-6 text-base font-bold text-ebony-clay">
+                class="leading-6 text-base font-bold text-ebony-clay dark:text-white">
                 The Octocat
               </h1>
               <h3 id="username" class="text-azure leading-5 text-xs">
@@ -71,11 +88,13 @@
             </div>
             <h3
               id="joined"
-              class="leading-5 text-xs text-slate-grey box col-start-2 col-span-2">
+              class="leading-5 text-xs text-slate-grey dark:text-white">
               Joined 25 Jan 2011
             </h3>
           </div>
-          <p id="bio" class="leading-6 text-xs text-kashmir-blue mt-8 mb-6">
+          <p
+            id="bio"
+            class="leading-6 text-xs text-kashmir-blue dark:text-white mt-8 mb-6">
             Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
             odio. Quisque volutpat mattis eros.
           </p>
@@ -83,23 +102,33 @@
 
         <div
           id="user-stats"
-          class="bg-ghost-white flex justify-evenly rounded-xl py-5 mb-6">
+          class="bg-ghost-white dark:bg-big-stone flex justify-evenly rounded-xl py-5 mb-6">
           <div class="text-center">
-            <h4 class="text-xs text-kashmir-blue mb-2">
+            <h4 class="text-xs text-kashmir-blue dark:text-white mb-2">
               Repos
-              <h2 id="repos" class="font-bold text-ebony-clay">8</h2>
+              <h2 id="repos" class="font-bold text-ebony-clay dark:text-white">
+                8
+              </h2>
             </h4>
           </div>
           <div class="text-center">
-            <h4 class="text-xs text-kashmir-blue mb-2">
+            <h4 class="text-xs text-kashmir-blue dark:text-white mb-2">
               Followers
-              <h2 id="followers" class="font-bold text-ebony-clay">3938</h2>
+              <h2
+                id="followers"
+                class="font-bold text-ebony-clay dark:text-white">
+                3938
+              </h2>
             </h4>
           </div>
           <div class="text-center">
-            <h4 class="text-xs text-kashmir-blue mb-2">
+            <h4 class="text-xs text-kashmir-blue dark:text-white mb-2">
               Following
-              <h2 id="following" class="font-bold text-ebony-clay">9</h2>
+              <h2
+                id="following"
+                class="font-bold text-ebony-clay dark:text-white">
+                9
+              </h2>
             </h4>
           </div>
         </div>
@@ -110,7 +139,7 @@
               src="./assets/icons/icon-location.svg"
               alt=""
               class="inline w-5 filter-light dark:filter-dark" />
-            <span id="location" class="text-kashmir-blue pl-3"
+            <span id="location" class="text-kashmir-blue dark:text-white pl-3"
               >San Francisco</span
             >
           </div>
@@ -119,7 +148,7 @@
               src="./assets/icons/icon-website.svg"
               alt=""
               class="inline w-5 filter-light dark:filter-dark" />
-            <span id="link" class="text-kashmir-blue pl-3">
+            <span id="link" class="text-kashmir-blue dark:text-white pl-3">
               <a href="https://github.blog">https://github.blog </a>
             </span>
           </div>
@@ -128,7 +157,9 @@
               src="./assets/icons/icon-twitter.svg"
               alt=""
               class="inline w-5 filter-light dark:filter-dark opacity-50" />
-            <span id="twitter" class="text-kashmir-blue pl-3 opacity-50">
+            <span
+              id="twitter"
+              class="text-kashmir-blue dark:text-white pl-3 opacity-50">
               <a href="https://twitter.com/brookelikesowls">Not Available</a>
             </span>
           </div>
@@ -137,7 +168,9 @@
               src="./assets/icons/icon-company.svg"
               alt=""
               class="inline w-5 filter-light dark:filter-dark" />
-            <span id="company" class="text-kashmir-blue pl-3">@github</span>
+            <span id="company" class="text-kashmir-blue dark:text-white pl-3"
+              >@github</span
+            >
           </div>
         </div>
       </div>
