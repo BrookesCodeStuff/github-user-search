@@ -585,8 +585,8 @@ video {
   margin-bottom: 1rem;
 }
 
-.mt-8 {
-  margin-top: 2rem;
+.mt-6 {
+  margin-top: 1.5rem;
 }
 
 .mb-9 {
@@ -595,6 +595,10 @@ video {
 
 .mr-5 {
   margin-right: 1.25rem;
+}
+
+.mt-8 {
+  margin-top: 2rem;
 }
 
 .mb-6 {
@@ -607,10 +611,6 @@ video {
 
 .mb-4 {
   margin-bottom: 1rem;
-}
-
-.mt-6 {
-  margin-top: 1.5rem;
 }
 
 .inline {
@@ -637,8 +637,8 @@ video {
   width: 100vw;
 }
 
-.w-11\/12 {
-  width: 91.666667%;
+.w-\[20\.4375rem\] {
+  width: 20.4375rem;
 }
 
 .w-5 {
@@ -651,26 +651,6 @@ video {
 
 .w-18 {
   width: 4.375rem;
-}
-
-.w-10\/12 {
-  width: 83.333333%;
-}
-
-.w-5\/6 {
-  width: 83.333333%;
-}
-
-.w-96 {
-  width: 24rem;
-}
-
-.w-80 {
-  width: 20rem;
-}
-
-.w-\[20\.4375rem\] {
-  width: 20.4375rem;
 }
 
 .flex-initial {
@@ -859,9 +839,39 @@ video {
       hue-rotate(177deg) brightness(88%) contrast(91%);
 }
 
+.hover\:text-ebony-clay:hover {
+  --tw-text-opacity: 1;
+  color: rgb(43 52 66 / var(--tw-text-opacity));
+}
+
+.hover\:underline:hover {
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+}
+
+.hover\:filter-ebony-clay:hover {
+  filter: brightness(0) saturate(100%) invert(17%) sepia(20%) saturate(790%)
+      hue-rotate(177deg) brightness(90%) contrast(87%);
+}
+
+.first\:hover\:text-ebony-clay:hover:first-child {
+  --tw-text-opacity: 1;
+  color: rgb(43 52 66 / var(--tw-text-opacity));
+}
+
 .focus\:outline-none:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
+}
+
+.group:hover .group-hover\:text-ebony-clay {
+  --tw-text-opacity: 1;
+  color: rgb(43 52 66 / var(--tw-text-opacity));
+}
+
+.group:hover .group-hover\:filter-ebony-clay {
+  filter: brightness(0) saturate(100%) invert(17%) sepia(20%) saturate(790%)
+      hue-rotate(177deg) brightness(90%) contrast(87%);
 }
 
 .dark .dark\:bg-big-stone {
@@ -888,6 +898,31 @@ video {
 .dark .dark\:filter-dark {
   filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(1273%)
       hue-rotate(165deg) brightness(122%) contrast(100%);
+}
+
+.dark .dark\:hover\:text-kashmir-blue:hover {
+  --tw-text-opacity: 1;
+  color: rgb(75 106 155 / var(--tw-text-opacity));
+}
+
+.dark .dark\:hover\:filter-kashmir-blue:hover {
+  filter: brightness(0) saturate(100%) invert(36%) sepia(42%) saturate(549%)
+      hue-rotate(177deg) brightness(101%) contrast(90%);
+}
+
+.dark .dark\:first\:hover\:text-kashmir-blue:hover:first-child {
+  --tw-text-opacity: 1;
+  color: rgb(75 106 155 / var(--tw-text-opacity));
+}
+
+.dark .group:hover .dark\:group-hover\:text-kashmir-blue {
+  --tw-text-opacity: 1;
+  color: rgb(75 106 155 / var(--tw-text-opacity));
+}
+
+.dark .group:hover .dark\:group-hover\:filter-kashmir-blue {
+  filter: brightness(0) saturate(100%) invert(36%) sepia(42%) saturate(549%)
+      hue-rotate(177deg) brightness(101%) contrast(90%);
 }
 
 @media (min-width: 1024px) {

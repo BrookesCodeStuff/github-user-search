@@ -11,4 +11,12 @@
     filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(1273%)
       hue-rotate(165deg) brightness(122%) contrast(100%);
   }
+  .filter-ebony-clay {
+    filter: brightness(0) saturate(100%) invert(17%) sepia(20%) saturate(790%)
+      hue-rotate(177deg) brightness(90%) contrast(87%);
+  }
+  .filter-kashmir-blue {
+    filter: brightness(0) saturate(100%) invert(36%) sepia(42%) saturate(549%)
+      hue-rotate(177deg) brightness(101%) contrast(90%);
+  }
 }

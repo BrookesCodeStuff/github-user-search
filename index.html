@@ -41,10 +41,13 @@
         </h1>
         <button
           id="mode-toggle"
-          class="flex flex-row justify-evenly items-center">
-          <span class="pr-4 text-kashmir-blue dark:text-white">Dark</span>
+          class="flex flex-row justify-evenly items-center group">
+          <span
+            class="pr-4 text-kashmir-blue dark:text-white group-hover:text-ebony-clay dark:group-hover:text-kashmir-blue"
+            >Dark</span
+          >
           <img
-            class="w-5 h-5 filter-light dark:filter-dark"
+            class="w-5 h-5 filter-light dark:filter-dark group-hover:filter-ebony-clay dark:group-hover:filter-kashmir-blue"
             src="./assets/icons/icon-moon.svg"
             alt="" />
         </button>
@@ -62,7 +65,7 @@
           No results
         </span>
         <button
-          class="bg-azure text-white text-sm font-bold py-3 px-4 rounded-xl m-1.5"
+          class="bg-azure text-white text-sm font-bold py-3 px-4 rounded-xl m-1.5 hover:"
           type="submit">
           Search
         </button>
@@ -150,7 +153,9 @@
               alt=""
               class="inline w-5 filter-light dark:filter-dark" />
             <span id="link" class="text-kashmir-blue dark:text-white pl-3">
-              <a href="https://github.blog">https://github.blog </a>
+              <a href="https://github.blog" class="hover:underline"
+                >https://github.blog
+              </a>
             </span>
           </div>
           <div class="mb-4">
@@ -161,7 +166,7 @@
             <span
               id="twitter"
               class="text-kashmir-blue dark:text-white pl-3 opacity-50">
-              <a href="https://twitter.com/brookelikesowls">Not Available</a>
+              <a href="" class="hover:underline">Not Available</a>
             </span>
           </div>
           <div class="mb-4">
