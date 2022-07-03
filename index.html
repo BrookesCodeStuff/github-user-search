@@ -33,17 +33,19 @@
     </script>
   </head>
   <body
-    class="bg-ghost-white dark:bg-big-stone font-serif transition-colors w-screen">
-    <main class="mt-6 w-[20.4375rem] mx-auto">
-      <header class="flex flex-row justify-between mb-9">
-        <h1 class="font-bold text-xl text-ebony-clay dark:text-white">
+    class="bg-ghost-white dark:bg-big-stone font-serif transition-colors w-screen h-screen flex justify-center content-center items-center">
+    <main
+      class="w-[20.4375rem] md:w-[35.8125rem] flex flex-col justify-between items-center">
+      <header class="flex flex-row justify-between w-full mt-6 mb-6">
+        <h1
+          class="font-bold text-xl md:text-xxl text-ebony-clay dark:text-white">
           devfinder
         </h1>
         <button
           id="mode-toggle"
           class="flex flex-row justify-evenly items-center group">
           <span
-            class="pr-4 text-kashmir-blue dark:text-white group-hover:text-ebony-clay dark:group-hover:text-kashmir-blue"
+            class="pr-4 text-kashmir-blue dark:text-white group-hover:text-ebony-clay dark:group-hover:text-kashmir-blue md:text-xs"
             >Dark</span
           >
           <img
@@ -54,14 +56,19 @@
       </header>
 
       <form
-        class="bg-romance dark:bg-blue-zodiac flex flex-row items-center rounded-2xl shadow-3xl dark:shadow-none">
-        <img class="mx-2 w-5 h-5" src="./assets/icons/icon-search.svg" alt="" />
+        class="bg-romance dark:bg-blue-zodiac flex flex-row items-center rounded-2xl shadow-3xl dark:shadow-none w-full">
+        <img
+          class="mx-2 w-5 md:w-6 h-5 md:h-6"
+          src="./assets/icons/icon-search.svg"
+          alt="" />
         <input
-          class="form-input focus:outline-none border-none text-blue-zodiac dark:text-white dark:bg-blue-zodiac text-xs flex-initial w-4/5"
+          class="form-input focus:outline-none border-none text-blue-zodiac dark:text-white dark:bg-blue-zodiac text-xs md:text-lg flex-initial w-4/5"
           id="user-search"
           type="text"
           placeholder="Search GitHub username..." />
-        <span id="error" class="text-red-600 text-xs flex-none hidden">
+        <span
+          id="error"
+          class="text-red-600 text-xs md:text-lg flex-none hidden">
           No results
         </span>
         <button
@@ -73,32 +80,34 @@
 
       <div
         id="user-card"
-        class="my-4 px-6 py-8 bg-romance dark:bg-blue-zodiac rounded-2xl shadow-3xl dark:shadow-none">
-        <div class="">
+        class="my-4 px-6 py-8 bg-romance dark:bg-blue-zodiac rounded-2xl shadow-3xl dark:shadow-none w-full">
+        <div>
           <img
             id="avatar"
             src="https://avatars.githubusercontent.com/u/583231?v=4"
-            class="rounded-full w-18 h-18 lg:w-28 lg:h-28 mr-5 float-left" />
-          <div>
+            class="rounded-full w-18 h-18 md:w-29 md:h-29 mr-5 float-left" />
+          <div class="md:h-[7.3125rem]">
             <div>
               <h1
                 id="name"
-                class="leading-6 text-base font-bold text-ebony-clay dark:text-white">
+                class="leading-6 text-base md:text-xxl font-bold text-ebony-clay dark:text-white">
                 The Octocat
               </h1>
-              <h3 id="username" class="text-azure leading-5 text-xs">
+              <h3
+                id="username"
+                class="text-azure leading-5 text-xs md:text-base">
                 @octocat
               </h3>
             </div>
             <h3
               id="joined"
-              class="leading-5 text-xs text-slate-grey dark:text-white">
+              class="leading-5 text-xs md:text-base text-slate-grey dark:text-white">
               Joined 25 Jan 2011
             </h3>
           </div>
           <p
             id="bio"
-            class="leading-6 text-xs text-kashmir-blue dark:text-white mt-8 mb-6">
+            class="leading-6 text-xs md:text-base text-kashmir-blue dark:text-white mt-8 md:mt-6 mb-6 float-none">
             Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
             odio. Quisque volutpat mattis eros.
           </p>
@@ -108,37 +117,42 @@
           id="user-stats"
           class="bg-ghost-white dark:bg-big-stone flex justify-evenly rounded-xl py-5 mb-6">
           <div class="text-center">
-            <h4 class="text-xs text-kashmir-blue dark:text-white mb-2">
+            <h4
+              class="text-xs md:text-sm text-kashmir-blue dark:text-white mb-2">
               Repos
-              <h2 id="repos" class="font-bold text-ebony-clay dark:text-white">
+              <h2
+                id="repos"
+                class="font-bold text-ebony-clay dark:text-white md:text-xl">
                 8
               </h2>
             </h4>
           </div>
           <div class="text-center">
-            <h4 class="text-xs text-kashmir-blue dark:text-white mb-2">
+            <h4
+              class="text-xs md:text-sm text-kashmir-blue dark:text-white mb-2">
               Followers
               <h2
                 id="followers"
-                class="font-bold text-ebony-clay dark:text-white">
+                class="font-bold text-ebony-clay dark:text-white md:text-xl">
                 3938
               </h2>
             </h4>
           </div>
           <div class="text-center">
-            <h4 class="text-xs text-kashmir-blue dark:text-white mb-2">
+            <h4
+              class="text-xs md:text-sm text-kashmir-blue dark:text-white mb-2">
               Following
               <h2
                 id="following"
-                class="font-bold text-ebony-clay dark:text-white">
+                class="font-bold text-ebony-clay dark:text-white md:text-xl">
                 9
               </h2>
             </h4>
           </div>
         </div>
 
-        <div class="user-location">
-          <div class="mb-4">
+        <div class="user-location md:flex md:flex-row md:flex-wrap">
+          <div class="mb-4 md:basis-1/2 md:order-1">
             <img
               src="./assets/icons/icon-location.svg"
               alt=""
@@ -147,7 +161,7 @@
               >San Francisco</span
             >
           </div>
-          <div class="mb-4">
+          <div class="mb-4 md:basis-1/2 md:order-3">
             <img
               src="./assets/icons/icon-website.svg"
               alt=""
@@ -158,7 +172,7 @@
               </a>
             </span>
           </div>
-          <div class="mb-4">
+          <div class="mb-4 md:basis-1/2 md:order-2">
             <img
               src="./assets/icons/icon-twitter.svg"
               alt=""
@@ -169,7 +183,7 @@
               <a href="" class="hover:underline">Not Available</a>
             </span>
           </div>
-          <div class="mb-4">
+          <div class="mb-4 md:basis-1/2 md:order-4">
             <img
               src="./assets/icons/icon-company.svg"
               alt=""

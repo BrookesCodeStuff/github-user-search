@@ -9,6 +9,7 @@ module.exports = {
     extend: {
       spacing: {
         18: "4.375rem",
+        29: "7.3125rem",
       },
       boxShadow: {
         "3xl": "0px 16px 30px -10px rgba(70, 96, 187, 0.198567)",
@@ -25,6 +26,9 @@ module.exports = {
         "blue-zodiac": "#1e2a47",
         mist: "#979797",
         iris: "#4660BB",
+      },
+      fontSize: {
+        xxl: ["26px", "39px"],
       },
     },
   },
