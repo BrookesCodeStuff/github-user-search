@@ -35,7 +35,7 @@
   <body
     class="bg-ghost-white dark:bg-big-stone font-serif transition-colors w-screen h-screen flex justify-center content-center items-center">
     <main
-      class="w-[20.4375rem] md:w-[35.8125rem] flex flex-col justify-between items-center">
+      class="w-[20.4375rem] md:w-[35.8125rem] lg:w-[45.625rem] flex flex-col justify-between items-center">
       <header class="flex flex-row justify-between w-full mt-6 mb-6">
         <h1
           class="font-bold text-xl md:text-xxl text-ebony-clay dark:text-white">
@@ -80,42 +80,39 @@
 
       <div
         id="user-card"
-        class="my-4 px-6 py-8 bg-romance dark:bg-blue-zodiac rounded-2xl shadow-3xl dark:shadow-none w-full">
-        <div>
-          <img
-            id="avatar"
-            src="https://avatars.githubusercontent.com/u/583231?v=4"
-            class="rounded-full w-18 h-18 md:w-29 md:h-29 mr-5 float-left" />
-          <div class="md:h-[7.3125rem]">
-            <div>
-              <h1
-                id="name"
-                class="leading-6 text-base md:text-xxl font-bold text-ebony-clay dark:text-white">
-                The Octocat
-              </h1>
-              <h3
-                id="username"
-                class="text-azure leading-5 text-xs md:text-base">
-                @octocat
-              </h3>
-            </div>
-            <h3
-              id="joined"
-              class="leading-5 text-xs md:text-base text-slate-grey dark:text-white">
-              Joined 25 Jan 2011
-            </h3>
-          </div>
-          <p
-            id="bio"
-            class="leading-6 text-xs md:text-base text-kashmir-blue dark:text-white mt-8 md:mt-6 mb-6 float-none">
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-            odio. Quisque volutpat mattis eros.
-          </p>
-        </div>
+        class="my-4 px-6 py-8 bg-romance dark:bg-blue-zodiac rounded-2xl shadow-3xl dark:shadow-none w-full flex flex-row flex-wrap lg:flex-none lg:grid lg:grid-rows-1 lg:grid-flow-col">
+        <img
+          id="avatar"
+          src="https://avatars.githubusercontent.com/u/583231?v=4"
+          class="rounded-full w-18 h-18 md:w-29 md:h-29 lg:w-29 lg:h-29 mr-5 basis-1/4 lg:row-span-4" />
 
         <div
+          class="md:h-[7.3125rem] lg:h-auto basis-1/2 lg:flex lg:justify-between">
+          <div>
+            <h1
+              id="name"
+              class="leading-6 text-base md:text-xxl font-bold text-ebony-clay dark:text-white">
+              The Octocat
+            </h1>
+            <h3 id="username" class="text-azure leading-5 text-xs md:text-base">
+              @octocat
+            </h3>
+          </div>
+          <h3
+            id="joined"
+            class="leading-5 text-xs md:text-base text-slate-grey dark:text-white">
+            Joined 25 Jan 2011
+          </h3>
+        </div>
+        <p
+          id="bio"
+          class="leading-6 text-xs md:text-base text-kashmir-blue dark:text-white mt-8 md:mt-6 lg:mt-5 mb-6 lg:mb-7 grow lg:grow-0">
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio.
+          Quisque volutpat mattis eros.
+        </p>
+        <div
           id="user-stats"
-          class="bg-ghost-white dark:bg-big-stone flex justify-evenly rounded-xl py-5 mb-6">
+          class="bg-ghost-white dark:bg-big-stone flex justify-evenly rounded-xl py-5 mb-6 lg:mb-9 grow">
           <div class="text-center">
             <h4
               class="text-xs md:text-sm text-kashmir-blue dark:text-white mb-2">
