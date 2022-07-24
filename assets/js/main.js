@@ -97,13 +97,13 @@ function createUserCard(data) {
 
   const twitter = document.querySelector("#twitter");
   data.twitter_username
-    ? ((twitter.innerHTML = `<a href=https://twitter.com/${data.twitter_username}>${data.twitter_username}</a>`),
+    ? ((twitter.innerHTML = `<a href=https://twitter.com/${data.twitter_username} class="hover:underline">${data.twitter_username}</a>`),
       isAvail(twitter))
     : notAvail(twitter);
 
   const link = document.querySelector("#link");
   data.blog
-    ? ((link.innerHTML = `<a href=${data.blog}>${data.blog}</a>`),
+    ? ((link.innerHTML = `<a href=${data.blog} class="hover:underline">${data.blog}</a>`),
       isAvail(link))
     : notAvail(link);
 
